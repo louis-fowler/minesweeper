@@ -9,20 +9,22 @@ const trueFalse = () => {
   }
 };
 
-const boardInit = x => {
+const boardSetUp = x => {
   let sqrt = Math.sqrt(x);
-  let rowInit = 1;
-  for (x = 1; x <= sqrt; x++) {
-    rowInit = x;
-  }
-  let colInit = 3;
-  for (i = 1; i <= 9; i++) {
+  rowArr = [];
+  colArr = [];
+  for (let i = 1; i <= sqrt; i++)
+    for (let y = 1; y <= sqrt; y++) {
+      rowArr.push(i);
+      colArr.push(y);
+    }
+  for (i = 0; i < x; i++) {
     board.cells.push({
-      row: rowInit,
-      col: i,
       isMine: trueFalse(),
       hidden: true,
     });
+    board.cells[i].row = rowArr[i];
+    board.cells[i].col = colArr[i];
   }
 };
 
@@ -32,11 +34,11 @@ var board = {
 };
 
 function startGame() {
+  boardSetUp(16);
   let newKey = board.cells.forEach(i => {
     i.surroundingMines = countSurroundingMines(i);
   });
   // Don't remove this function call: it makes the game work!
-  boardInit();
   lib.initBoard();
   document.addEventListener("click", checkForWin);
   return newKey;
