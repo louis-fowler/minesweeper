@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", startGame);
 
+// 50/50 mine creator
 const trueFalse = () => {
-  let fiftyFifty = Math.floor(Math.random() * Math.floor(2));
+  let fiftyFifty = Math.floor(Math.random() * Math.floor(4));
   if (fiftyFifty === 0) {
     return true;
   } else {
@@ -9,7 +10,19 @@ const trueFalse = () => {
   }
 };
 
+// Define your `board` object here!
+// var board = {
+//   size: 0,
+//   cells: [],
+// };
+
+// fill board
 const boardSetUp = x => {
+  // need to find a way to reset board before adding to it
+  // delete board.cells;
+  board = {
+    cells: [],
+  };
   let sqrt = Math.sqrt(x);
   rowArr = [];
   colArr = [];
@@ -26,15 +39,16 @@ const boardSetUp = x => {
     board.cells[i].row = rowArr[i];
     board.cells[i].col = colArr[i];
   }
+  board.cells.size = x;
+  console.log(board.cells);
 };
 
-// Define your `board` object here!
-var board = {
-  cells: [],
+const deleteBoard = () => {
+  delete board.cells;
 };
 
-function startGame() {
-  boardSetUp(16);
+function startGame(x) {
+  boardSetUp(36);
   let newKey = board.cells.forEach(i => {
     i.surroundingMines = countSurroundingMines(i);
   });
@@ -90,3 +104,7 @@ function countSurroundingMines(cell) {
   });
   return count;
 }
+
+const resetBoard = () => {
+  location.reload();
+};
