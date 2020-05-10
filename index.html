@@ -10,7 +10,12 @@
     <div id="message"></div>
     <div id="notes"></div>
     <div class="board"></div>
-    <button onclick="resetBoard()">Reset</button>
+    <div class="boardSize" id="boardSizeNum" value="9">
+      <button onclick="resetBoard(9)">Small</button>
+      <button onclick="resetBoard(16)">Medium</button>
+      <button onclick="resetBoard(36)">Large</button>
+    </div>
+    <button onclick="resetBoard(board.cells.size)">Reset</button>
     <script src="minesweeper.js"></script>
   </body>
 </html>
