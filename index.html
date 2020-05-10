@@ -5,17 +5,25 @@
     <link rel="stylesheet" href="minesweeper.css" />
     <script src="lib/tests.js"></script>
     <script src="lib/lib.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,200;0,300;0,400;0,700;1,400;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div id="message"></div>
     <div id="notes"></div>
-    <div class="board"></div>
     <div class="boardSize" id="boardSizeNum" value="9">
-      <button onclick="resetBoard(9)">Small</button>
-      <button onclick="resetBoard(16)">Medium</button>
-      <button onclick="resetBoard(36)">Large</button>
+      <button class="myButton" onclick="resetBoard(9)">Small</button>
+      <button class="myButton" onclick="resetBoard(16)">Medium</button>
+      <button class="myButton" onclick="resetBoard(36)">Large</button>
     </div>
-    <button onclick="resetBoard(board.cells.size)">Reset</button>
+    <div class="board"></div>
+    <div class="buttonContainer">
+      <button class="myButton" onclick="resetBoard(board.cells.size)">
+        Reset
+      </button>
+    </div>
     <script src="minesweeper.js"></script>
   </body>
 </html>

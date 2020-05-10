@@ -1,6 +1,10 @@
-html, body {
+html,
+body {
+  color: #485e20;
   height: 100%;
-  font-family: 'Open Sans', sans-serif
+  font-family: "Muli", sans-serif;
+  font-weight: 400;
+  background-color: #aad752;
 }
 
 body {
@@ -10,7 +14,8 @@ body {
   flex-direction: column;
 }
 
-#message, #notes {
+#message,
+#notes {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,35 +31,67 @@ body {
 }
 
 .board div {
-  color: green;
+  color: #485e20;
   font-size: 2rem;
   width: 75px;
   height: 75px;
-  border: 1px #ccc dotted;
-  border-radius: 10%;
-  background-color: white;
+  border: 0.05em solid #485e20;
+  border-radius: 3%;
   margin: 3px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #e7ffb9;
 }
 
 .board div:hover {
   background-color: white;
 }
 
-div.mine, div.mine:hover {
-  background: no-repeat center/60% url("images/bomb.svg") crimson;
+.boardSize {
+  padding-bottom: 0.5em;
+}
+
+.myButton {
+  display: inline-block;
+  padding: 0.55em 1.5em;
+  border: 0.1em solid #485e20;
+  font: "Muli", sans-serif;
+  font-weight: 400;
+  font-size: 0.9em;
+  color: #485e20;
+  background-color: white;
+  border-radius: 5%;
+}
+.myButton:hover {
+  color: #000000;
+}
+@media all and (max-width: 30em) {
+  .myButton {
+    display: block;
+    margin: 0.4em auto;
+  }
+}
+
+.buttonContainer {
+  padding-top: 0.5em;
+}
+
+div.mine,
+div.mine:hover {
+  background: no-repeat center/60% url("images/bomb.svg") #db3236;
 }
 
 div.hidden {
-  background: #eee;
+  background: #a1d14a;
+  border: 0.05em solid #485e20;
 }
 
 div.hidden:hover {
-  background: #ccc;
+  background: #b0ca7b;
 }
 
-div.marked, div.marked:hover {
-  background: no-repeat center/60% url("images/mark.svg") deepskyblue;
+div.marked,
+div.marked:hover {
+  background: no-repeat center/60% url("images/mark.svg") rgb(0, 255, 115);
 }
