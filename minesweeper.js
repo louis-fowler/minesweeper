@@ -67,6 +67,9 @@ function checkForWin() {
       return;
     }
   }
+  let csWin = new Audio("./sound/csWin.mp3");
+  csWin.volume = 0.3;
+  csWin.play();
   displayMessage("You win!");
   // You can use this function call to declare a winner (once you've
   // detected that they've won, that is!)
